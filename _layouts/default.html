@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head> 
+    <meta charset="utf-8">
+
+    <title>c19.io / {{ page.title }}</title>
+    <meta name="description" content="A Github hosted weblog by Marvin Charles">
+    <meta name="author" content="Marvin Charles">
+                              
+	<style> 
+	  body {
+        font-family: "Helvetica Neue", Tahoma, 'sans serif';
+        font-size: 18px;
+        -webkit-font-smoothing: antialiased;
+        line-height: 1.5;
+        color: #444444;
+      }
+      h1 { font-size: 135%; font-weight:bold; color: #000; }
+      h2 { font-size: 120%; font-weight:bold; color: #000; }
+      h3 { font-size: 110%; font-weight:bold; color: #000; } 
+      a { text-decoration:none; border-bottom:1px dotted; }
+      a,a:visited { color:#121212; }
+      a:hover,a:active { color:#008AFF; }   
+      .listing-item a, nav a { border-bottom:none; } 
+      h1 a .no-accent { color: #000 !important; font-weight:normal !important;}  
+      nav ul { list-style: none; margin:0; padding:0; }
+      i { font-family:Georgia,serif; color: #000; }
+      .copy { font-size:80%; } 
+      .post .title { display:inline-block; padding:0; margin:0; }
+      .meta { font-size:75%;}                    
+      .post-listing { list-style:none; margin:0; padding:0; }
+      .post .title, .listing-item { border-left:2px solid #008AFF; padding-left:.75em; }
+      .tag-item { display:inline-block; background-color: #EFEFEF; padding: 1px 4px; font-size: 80%; } 
+	</style>             
+  </head>
+  <body>
+	<header>
+	  <nav>
+	    <ul>
+		  <li><h1><a href="/">charlesmarvin<span class="no-accent">.github.io</span></a></h1></li>
+		</ul>
+	  </nav>
+	</header>    
+	{{ content }}
+  </body>
+</html>

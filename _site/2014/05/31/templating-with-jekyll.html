@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head> 
+    <meta charset="utf-8">
+
+    <title>c19.io / Templating with Jekyll</title>
+    <meta name="description" content="A Github hosted weblog by Marvin Charles">
+    <meta name="author" content="Marvin Charles">
+                              
+	<style> 
+	  body {
+        font-family: "Helvetica Neue", Tahoma, 'sans serif';
+        font-size: 18px;
+        -webkit-font-smoothing: antialiased;
+        line-height: 1.5;
+        color: #444444;
+      }
+      h1 { font-size: 135%; font-weight:bold; color: #000; }
+      h2 { font-size: 120%; font-weight:bold; color: #000; }
+      h3 { font-size: 110%; font-weight:bold; color: #000; } 
+      a { text-decoration:none; border-bottom:1px dotted; }
+      a,a:visited { color:#121212; }
+      a:hover,a:active { color:#008AFF; }   
+      .listing-item a, nav a { border-bottom:none; } 
+      h1 a .no-accent { color: #000 !important; font-weight:normal !important;}  
+      nav ul { list-style: none; margin:0; padding:0; }
+      i { font-family:Georgia,serif; color: #000; }
+      .copy { font-size:80%; } 
+      .post .title { display:inline-block; padding:0; margin:0; }
+      .meta { font-size:75%;}                    
+      .post-listing { list-style:none; margin:0; padding:0; }
+      .post .title, .listing-item { border-left:2px solid #008AFF; padding-left:.75em; }
+      .tag-item { display:inline-block; background-color: #EFEFEF; padding: 1px 4px; font-size: 80%; } 
+	</style>             
+  </head>
+  <body>
+	<header>
+	  <nav>
+	    <ul>
+		  <li><h1><a href="/">charlesmarvin<span class="no-accent">.github.io</span></a></h1></li>
+		</ul>
+	  </nav>
+	</header>    
+	<article class="post">
+  <header class="header">
+    <h2 class="title">Templating with Jekyll</h2>
+    <p class="meta">
+        Posted on <time datetime="2014-05-31 00:00:00 -0400">31 May 2014</time> by <a href="#">Marvin</a>
+    </p>
+  </header>
+  <div><p>
+    Hosting a static content weblog on Github (or any server) is relatively straight forward. <i>Author your content &#8594; commit &#8594; push</i>. After a few posts about your favorite programming language, your cat and that new restaurant you went to, you start noticing your workflow becomes <i>copy page layout from another page &#8594; edit page to include your new content &#8594; save</i>. Thats not inherently bad. Some content may be that static and simple.
+</p>
+  
+<p>
+    Pain points arise when the content author wants to change something after they have authored a substantial number of pages. <i>Find &#8594; Replace</i> may work for simple cases however it wont help if you want to change layout. Ideally changes to content and layout should be orthogonal. Templating engines facilitate the separation necessary for the content and layout to change independently. The upfront work of selecting a template engine and a consistent taxonomy of structural and stylistic elements pays dividends.   
+</p>
+
+<p>
+    <a href="http://jekyllrb.com/docs/home/">Jekyll</a> is the default templating engine or rather "static site generator" for Github pages. Have a look <a href="https://github.com/charlesmarvin/charlesmarvin.github.io">under the hood</a> to see how I'm using it. 
+</p></div> 
+  <div class="tags"> 
+    
+      <span class="tag-item">jekyll</span>
+    
+      <span class="tag-item">github</span>
+    
+      <span class="tag-item">dev</span>
+    
+  </div>
+</article>
+  </body>
+</html>
