@@ -23,7 +23,14 @@ html,body,div,span,applet,object,iframe,a,abbr,acronym,address,big,cite,code,del
   h1 a .no-accent { color: #000 !important; font-weight:normal !important;}  
   nav ul { list-style: none; margin:0; padding:0; }
   i { font-family:Georgia,serif; color: #000; }   
-  pre, code { font-family: monospace; display: inline-block; padding:.2em;} 
+  pre, code { 
+   font-family: monospace;                      
+   white-space: pre-wrap;       /* css-3 */
+   white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+   white-space: -pre-wrap;      /* Opera 4-6 */
+   white-space: -o-pre-wrap;    /* Opera 7 */
+   word-wrap: break-word;       /* Internet Explorer 5.5+ */
+  } 
   .title { border-left:2px solid #008AFF; padding:0em .5em; margin:1em 0em .5em 0em} 
   .copy { font-size:80%; }                                   
   .meta { font-size:75%; margin-bottom:1em;}                    
