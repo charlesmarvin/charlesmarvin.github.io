@@ -10,10 +10,18 @@ tags: [javascript, dev, osx]
 </p>
 
 <p>
-    A quick search of the interwebs yielded good results. Turns out there are a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Shells">few runtimes</a> out there for executing JavaScript from the command-line. If you are running an OSX Leopard or later you can use the <a href="http://trac.webkit.org/wiki/JSC">JSC</a> command-line utility. Create a symlink to the executable as follows:    
+    A quick search of the interwebs yielded good results. Turns out there are a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Shells">few interpreters</a> out there for executing JavaScript from the command-line. OSX Leopard or later ships with <a href="http://trac.webkit.org/wiki/JSC">JSC</a> which is a command-line utility for executing JavaScript. You can create a symlink to the executable as follows:    
 {% highlight bash %}
 $ sudo ln -s /System/Library/Frameworks/JavaScriptCore.framework/Versions/Current/Resources/jsc /bin/jsc
 {% endhighlight %} 
+Then run the interpreter interactively using the following command:
+{% highlight bash %}
+$ jsc
+{% endhighlight %} 
+Execute a script called solution.js as follows:
+{% highlight bash %}
+$ jsc solution.js
+{% endhighlight %}
 </p>
 
 <p>
@@ -22,7 +30,7 @@ I went with Mozilla's <a html="https://developer.mozilla.org/en-US/docs/Mozilla/
 $ brew install spidermonkey
 {% endhighlight %}  
 
-Once installation is complete you can run the interpreter interactively with the following command:
+Once installation is complete you can run the interpreter interactively using the following command:
 {% highlight bash %}
 $ js
 {% endhighlight %} 
@@ -33,5 +41,8 @@ $ js solution.js
 </p>
 
 <p>
-    Keep in mind that you are running outside of the context of the browser so as a result functions that are available in the browser may not be available in your JavaScript runtime and vise versa. 
+    Keep in mind that you are running outside of the context of the browser so as a result functions that are available in the browser may not be available in your JavaScript runtime and vise versa. Also, you need to check which version/features of <a href="http://en.wikipedia.org/wiki/ECMAScript">ECMAScript</a> the engine supports. For instance the following works in SpidermMonkey but not in JSC:
+{% highlight js %}
+let foo = "Hello World";
+{% endhighlight %}  
 </p>

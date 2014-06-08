@@ -60,22 +60,27 @@
 </p>
 
 <p>
-    A quick search of the interwebs yielded good results. Turns out there are a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Shells">few runtimes</a> out there for executing JavaScript from the command-line. If you are running an OSX Leopard or later you can use the <a href="http://trac.webkit.org/wiki/JSC">JSC</a> command-line utility. Create a symlink to the executable as follows:    
+    A quick search of the interwebs yielded good results. Turns out there are a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Shells">few interpreters</a> out there for executing JavaScript from the command-line. OSX Leopard or later ships with <a href="http://trac.webkit.org/wiki/JSC">JSC</a> which is a command-line utility for executing JavaScript. You can create a symlink to the executable as follows:    
 <div class="highlight"><pre><code class="bash"><span class="nv">$ </span>sudo ln -s /System/Library/Frameworks/JavaScriptCore.framework/Versions/Current/Resources/jsc /bin/jsc</code></pre></div> 
+Then run the interpreter interactively using the following command:
+<div class="highlight"><pre><code class="bash"><span class="nv">$ </span>jsc</code></pre></div> 
+Execute a script called solution.js as follows:
+<div class="highlight"><pre><code class="bash"><span class="nv">$ </span>jsc solution.js</code></pre></div>
 </p>
 
 <p>
 I went with Mozilla's <a html="https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey/Introduction_to_the_JavaScript_shell">SpiderMonkey</a>. The install was simple enough using <a href="http://brew.sh/">Homebrew</a>:
 <div class="highlight"><pre><code class="bash"><span class="nv">$ </span>brew install spidermonkey</code></pre></div>  
 
-Once installation is complete you can run the interpreter interactively with the following command:
+Once installation is complete you can run the interpreter interactively using the following command:
 <div class="highlight"><pre><code class="bash"><span class="nv">$ </span>js</code></pre></div> 
 Execute a script called solution.js as follows:
 <div class="highlight"><pre><code class="bash"><span class="nv">$ </span>js solution.js</code></pre></div>
 </p>
 
 <p>
-    Keep in mind that you are running outside of the context of the browser so as a result functions that are available in the browser may not be available in your JavaScript runtime and vise versa. 
+    Keep in mind that you are running outside of the context of the browser so as a result functions that are available in the browser may not be available in your JavaScript runtime and vise versa. Also, you need to check which version/features of <a href="http://en.wikipedia.org/wiki/ECMAScript">ECMAScript</a> the engine supports. For instance the following works in SpidermMonkey but not in JSC:
+<div class="highlight"><pre><code class="js"><span class="kd">let</span> <span class="nx">foo</span> <span class="o">=</span> <span class="s2">&quot;Hello World&quot;</span><span class="p">;</span></code></pre></div>  
 </p></div> 
   <div class="tags"> 
     
