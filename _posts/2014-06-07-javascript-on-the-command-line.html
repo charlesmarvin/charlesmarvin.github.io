@@ -44,8 +44,19 @@ $ js solution.js
 </p>
 
 <p>
-    Keep in mind that you are running outside of the context of the browser so as a result functions that are available in the browser may not be available in your JavaScript runtime and vise versa. Also, you need to check which version/features of <a href="http://en.wikipedia.org/wiki/ECMAScript">ECMAScript</a> the engine supports. For instance the following works in SpidermMonkey but not in JSC:
-{% highlight js %}
-let foo = "Hello World";
+    When writing code to be run using an interpreter be aware that functions which are available in the browser may not be available in your chosen JavaScript runtime and vise versa. Also, you should to check which version/features of <a href="http://en.wikipedia.org/wiki/ECMAScript">ECMAScript</a> the interpreter supports. See examples below.
+{% highlight bash %}
+$ js
+js> let foo = 'Hello World'  // let is an ECMA6/JS 1.7 keyword
+js> print( foo )
+Hello World       
+js> console.log( 'bar' )
+typein:2: ReferenceError: console is not defined
+
+$ jsc
+>>> let foo = 'Hello World'
+Expected an identifier but found 'foo' instead:1
+>>> console.log( 'bar' )
+Exception: ReferenceError: Can't find variable: console
 {% endhighlight %}  
 </p>
