@@ -1,0 +1,37 @@
+--- 
+layout: post
+title: Executing JavaScript on the command-line
+author: Marvin
+tags: [javascript, dev, osx]   
+---
+
+<p>
+    I started hacking my solutions to <a href="http://projecteuler.net/">Project Euler</a> using python but recently decided to do them in JavaScript. I could easily create a simple web page to execute my JavaScript solutions however the lazy developer in me didn't want to. I wanted to run my scripts outside of the context of a web browser.  
+</p>
+
+<p>
+    A quick search of the interwebs yielded good results. Turns out there are a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Shells">few runtimes</a> out there for executing JavaScript from the command-line. If you are running an OSX Leopard or later you can use the <a href="http://trac.webkit.org/wiki/JSC">JSC</a> command-line utility. Create a symlink to the executable as follows:    
+{% highlight bash %}
+$ sudo ln -s /System/Library/Frameworks/JavaScriptCore.framework/Versions/Current/Resources/jsc /bin/jsc
+{% endhighlight %} 
+</p>
+
+<p>
+I went with Mozilla's <a html="https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey/Introduction_to_the_JavaScript_shell">SpiderMonkey</a>. The install was simple enough using <a href="http://brew.sh/">Homebrew</a>:
+{% highlight bash %}
+$ brew install spidermonkey
+{% endhighlight %}  
+
+Once installation is complete you can run the interpreter interactively with the following command:
+{% highlight bash %}
+$ js
+{% endhighlight %} 
+Execute a script called solution.js as follows:
+{% highlight bash %}
+$ js solution.js
+{% endhighlight %}
+</p>
+
+<p>
+    Keep in mind that you are running outside of the context of the browser so as a result functions that are available in the browser may not be available in your JavaScript runtime and vise versa. 
+</p>

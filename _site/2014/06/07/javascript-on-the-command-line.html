@@ -3,7 +3,7 @@
   <head> 
     <meta charset="utf-8">
 
-    <title>c19.io / Home</title>
+    <title>c19.io / Executing JavaScript on the command-line</title>
     <meta name="description" content="A Github hosted weblog by Marvin Charles">
     <meta name="author" content="Marvin Charles">
     <meta name="viewport" content="width=device-width" />                          
@@ -48,23 +48,44 @@
 		</ul>
 	  </nav>
 	</header>    
-	<section>
-  <ul class="post-listing">
-  
-    <li class="title">
-      <h2><a href="/2014/06/07/javascript-on-the-command-line.html">Executing JavaScript on the command-line</a></h2>                           
-    </li>
-  
-    <li class="title">
-      <h2><a href="/2014/05/31/templating-with-jekyll.html">Templating with Jekyll</a></h2>                           
-    </li>
-  
-    <li class="title">
-      <h2><a href="/2014/05/30/hello-world.html">Hello World</a></h2>                           
-    </li>
-    
-  </ul>
-</section>
+	<article class="post">
+  <header class="header">
+    <h2 class="title">Executing JavaScript on the command-line</h2>
+    <p class="meta">
+        Posted on <time datetime="2014-06-07 00:00:00 -0400">07 Jun 2014</time> by <a href="#">Marvin</a>
+    </p>
+  </header>
+  <div><p>
+    I started hacking my solutions to <a href="http://projecteuler.net/">Project Euler</a> using python but recently decided to do them in JavaScript. I could easily create a simple web page to execute my JavaScript solutions however the lazy developer in me didn't want to. I wanted to run my scripts outside of the context of a web browser.  
+</p>
 
+<p>
+    A quick search of the interwebs yielded good results. Turns out there are a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Shells">few runtimes</a> out there for executing JavaScript from the command-line. If you are running an OSX Leopard or later you can use the <a href="http://trac.webkit.org/wiki/JSC">JSC</a> command-line utility. Create a symlink to the executable as follows:    
+<div class="highlight"><pre><code class="bash"><span class="nv">$ </span>sudo ln -s /System/Library/Frameworks/JavaScriptCore.framework/Versions/Current/Resources/jsc /bin/jsc</code></pre></div> 
+</p>
+
+<p>
+I went with Mozilla's <a html="https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey/Introduction_to_the_JavaScript_shell">SpiderMonkey</a>. The install was simple enough using <a href="http://brew.sh/">Homebrew</a>:
+<div class="highlight"><pre><code class="bash"><span class="nv">$ </span>brew install spidermonkey</code></pre></div>  
+
+Once installation is complete you can run the interpreter interactively with the following command:
+<div class="highlight"><pre><code class="bash"><span class="nv">$ </span>js</code></pre></div> 
+Execute a script called solution.js as follows:
+<div class="highlight"><pre><code class="bash"><span class="nv">$ </span>js solution.js</code></pre></div>
+</p>
+
+<p>
+    Keep in mind that you are running outside of the context of the browser so as a result functions that are available in the browser may not be available in your JavaScript runtime and vise versa. 
+</p></div> 
+  <div class="tags"> 
+    
+      <span class="tag-item">javascript</span>
+    
+      <span class="tag-item">dev</span>
+    
+      <span class="tag-item">osx</span>
+    
+  </div>
+</article>
   </body>
 </html>
