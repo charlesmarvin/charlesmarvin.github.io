@@ -1,6 +1,6 @@
 --- 
 layout: post
-title: On Notes
+title: Milestones
 author: Marvin
 tags: [general]   
 --- 
