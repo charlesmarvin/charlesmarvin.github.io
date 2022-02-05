@@ -1,0 +1,19 @@
+---
+layout: default
+title: "Notes"
+permalink: /notes/
+---
+
+<section>
+  <h1>Notes</h1>
+  <nav>
+    <ul class="post-listing unstyled-list">
+      {% for post in site.posts %}
+        <li class="post-listing__item">
+          <span class="post-listing__date">{{post.date | date_to_string}}</span>
+          <h2 class="post-listing__title"><a href="{{post.url}}">{{post.title}}</a></h2>                           
+        </li>
+      {% endfor %}  
+      </ul>
+  </nav>
+</section>

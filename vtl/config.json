@@ -1,0 +1,236 @@
+{
+  "panels": [
+    {
+      "type": "CBC",
+      "longName": "Complete Blood Count",
+      "abnormalRangeIndicators": [
+        "nutritional deficiencies, such as vitamin B6 or B12",
+        "anemia (iron deficiency)",
+        "clotting problems",
+        "blood cancer",
+        "infection",
+        "immune system disorders"
+      ]
+    },
+    {
+      "type": "CMP",
+      "longName": "Comprehensive Metabolic Panel",
+      "abnormalRangeIndicators": []
+    },
+    {
+      "type": "lipid",
+      "longName": "Lipid Panel",
+      "abnormalRangeIndicators": []
+    },
+    {
+      "type": "cardiac",
+      "longName": "Cardiac biomarkers",
+      "abnormalRangeIndicators": []
+    },
+    {
+      "type": "thyroid",
+      "longName": "Thyroid Panel",
+      "abnormalRangeIndicators": []
+    }
+  ],
+  "components": [
+    {
+      "type": "RANGE",
+      "shortName": "RBC",
+      "longName": "Red Blood Cells",
+      "description": "Cells responsible for carrying oxygen throughout the body.",
+      "panelType": "CBC",
+      "normalRange": {
+        "male": {
+          "min": 4.3,
+          "max": 5.9
+        },
+        "female": {
+          "min": 3.5,
+          "max": 5.5
+        }
+      },
+      "unit": "x10E3uL"
+    },
+    {
+      "type": "RANGE",
+      "shortName": "WBC",
+      "longName": "White Blood Cells",
+      "description": "Immune system cells in the blood.",
+      "panelType": "CBC",
+      "normalRange": {
+        "male": {
+          "min": 3.4,
+          "max": 10.8
+        },
+        "female": {
+          "min": 3.4,
+          "max": 10.8
+        }
+      },
+      "unit": "x10E3uL"
+    },
+    {
+      "type": "RANGE",
+      "shortName": "platelets",
+      "longName": "Platelets",
+      "description": "The substances that control the clotting of the blood.",
+      "panelType": "CBC",
+      "normalRange": {
+        "male": {
+          "min": 150,
+          "max": 400
+        },
+        "female": {
+          "min": 150,
+          "max": 400
+        }
+      },
+      "unit": "/mm3"
+    },
+    {
+      "type": "RANGE",
+      "shortName": "hemoglobin",
+      "longName": "Hemoglobin",
+      "description": "Protein within the red blood cells that carries oxygen to organs and tissues, and carbon dioxide back to the lungs.",
+      "panelType": "CBC",
+      "normalRange": {
+        "male": {
+          "min": 13.5,
+          "max": 17.5
+        },
+        "female": {
+          "min": 12,
+          "max": 16
+        }
+      },
+      "unit": "x10E3uL"
+    },
+    {
+      "type": "RANGE",
+      "shortName": "hematocrit",
+      "longName": "Hematocrit",
+      "description": "Percentage of blood made of red blood cells.",
+      "panelType": "CBC",
+      "normalRange": {
+        "male": {
+          "min": 41,
+          "max": 53
+        },
+        "female": {
+          "min": 36,
+          "max": 46
+        }
+      },
+      "unit": "%"
+    },
+    {
+      "type": "RANGE",
+      "shortName": "ALP",
+      "longName": "Alkaline Phosphatase",
+      "description": "An enzyme mostly found in the bones and liver that's involved in several bodily processes.",
+      "panelType": "CMP",
+      "normalRange": {
+        "male": {
+          "min": 44,
+          "max": 147
+        },
+        "female": {
+          "min": 44,
+          "max": 147
+        }
+      },
+      "unit": "%"
+    },
+    {
+      "type": "RANGE",
+      "shortName": "ALT",
+      "longName": "Alanine Aminotransferase",
+      "description": "An enzyme found in the liver.",
+      "panelType": "CMP",
+      "normalRange": {
+        "male": {
+          "min": 10,
+          "max": 47
+        },
+        "female": {
+          "min": 10,
+          "max": 47
+        }
+      },
+      "unit": "%"
+    },
+    {
+      "type": "RANGE",
+      "shortName": "AST",
+      "longName": "Aspartate Aminotransferase",
+      "description": "An enzyme found in the liver and other tissues within the body.",
+      "panelType": "CMP",
+      "normalRange": {
+        "male": {
+          "min": 11,
+          "max": 38
+        },
+        "female": {
+          "min": 11,
+          "max": 38
+        }
+      },
+      "unit": "%"
+    },
+    {
+      "type": "RANGE",
+      "shortName": "bilirubin",
+      "longName": "Bilirubin",
+      "description": "Waste resulting from the breakdown of red blood cells that the liver filters out.",
+      "panelType": "CMP",
+      "normalRange": {
+        "male": {
+          "min": 41,
+          "max": 53
+        },
+        "female": {
+          "min": 36,
+          "max": 46
+        }
+      },
+      "unit": "%"
+    },
+    {
+      "type": "RANGE",
+      "shortName": "HDL",
+      "longName": "High-density Lipoprotein",
+      "description": "\"good\" cholesterol.",
+      "panelType": "lipid",
+      "normalRange": {
+        "male": {
+          "min": 40,
+          "max": 60
+        },
+        "female": {
+          "min": 50,
+          "max": 60
+        }
+      },
+      "unit": "mg/dL"
+    },
+    {
+      "type": "RANGE",
+      "shortName": "LDL",
+      "longName": "Low-density Lipoprotein",
+      "description": "\"bad\" cholesterol.",
+      "panelType": "lipid",
+      "normalRange": {
+        "male": {
+          "min": 0,
+          "max": 99
+        },
+        "female": {
+          "min": 0,
+          "max": 99
+        }
+      },
+      "unit": "mg/dL"
+    }
+  ]
+}

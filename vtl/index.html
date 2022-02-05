@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <script>
+    const loadConfig = async () => {
+      return fetch('/config.json').then((response) => response.json())
+    }
+    const loadData = async () => {
+      return fetch('/data.json').then((response) => response.json())
+    }
+
+    class VtlCard extends HTMLElement {
+      constructor() {
+        super()
+        const template = document.getElementById('vtl-card-tpl').content
+        this.attachShadow({ mode: 'open' }).appendChild(template.cloneNode(true))
+      }
+
+      connectedCallback() {
+        const value = this.getAttribute('data-value')
+        const rangeMin = this.getAttribute('data-range-min')
+        const rangeMax = this.getAttribute('data-range-max')
+        const unit = this.getAttribute('data-unit')
+
+        const rangePercent = ((value - rangeMin) / (rangeMax - rangeMin)) * 100
+
+        console.log(value, rangeMin, rangeMax, unit, rangePercent)
+        const rangeValue = this.shadowRoot.querySelector('.vtl-range-value')
+        rangeValue.textContent = value
+        rangeValue.style.textIndent = `${23 + rangePercent}%`
+        const rangeBarValue = this.shadowRoot.querySelector('.vtl-range-bar-value')
+        rangeBarValue.style.left = `${25 + rangePercent}%`
+        this.shadowRoot.querySelector('.vtl-range-min-value').textContent = rangeMin
+        this.shadowRoot.querySelector('.vtl-range-max-value').textContent = rangeMax
+      }
+    }
+
+    class VtlCardList extends HTMLElement {
+      loading = false
+      constructor() {
+        super()
+        this.attachShadow({ mode: 'open' })
+
+        // const template = document.getElementById('vtl-card-tpl').content
+        // this.attachShadow({ mode: 'closed' }).appendChild(template.cloneNode(true))
+      }
+
+      async connectedCallback() {
+        const config = await loadConfig()
+        const data = await loadData()
+
+        const componentsByShortName = {}
+        config.components.forEach((c) => {
+          componentsByShortName[c.shortName.toLowerCase()] = c
+        })
+        const list = document.createElement('div')
+        data.forEach((datum) => {
+          const cfg = componentsByShortName[datum[1].toLowerCase()]
+          if (!cfg) {
+            console.log('Now config provided for ', datum)
+            return
+          }
+          const card = document.createElement('vtl-card')
+          const slot = document.createElement('slot')
+          const sex = 'male'
+          slot.slot = 'vtl-name'
+          slot.textContent = datum[1]
+          card.appendChild(slot)
+          card.setAttribute('data-value', parseFloat(datum[2]).toFixed(1))
+
+          card.setAttribute('data-range-min', cfg.normalRange[sex].min.toFixed(1))
+          card.setAttribute('data-range-max', cfg.normalRange[sex].max.toFixed(1))
+          list.appendChild(card)
+        })
+        this.shadowRoot.append(list)
+      }
+    }
+
+    customElements.define('vtl-card-list', VtlCardList)
+    customElements.define('vtl-card', VtlCard)
+  </script>
+  <body class="col">
+    <template id="vtl-card-tpl">
+      <style>
+        .vtl-card {
+          background-color: #ececec;
+          border-radius: 3px;
+          padding: 0.8rem 1rem;
+          margin-bottom: 0.5rem;
+        }
+
+        .vtl-name {
+          font-size: 0.7rem;
+          font-weight: 600;
+          margin-bottom: 0.25rem;
+        }
+
+        .vtl-range-bar {
+          border: #cecece solid 1px;
+          background-color: #cecece;
+          border-radius: 3px;
+          height: 5px;
+          position: relative;
+          margin-top: 2px;
+          margin-bottom: 2px;
+        }
+
+        .vtl-range-bar-value {
+          background-color: white;
+          border-radius: 3px;
+          height: 5px;
+          width: 5px;
+          position: absolute;
+          z-index: 1;
+        }
+
+        .vtl-range-bar-normal {
+          background-color: green;
+          border-radius: 3px;
+          width: 50%;
+          height: 7px;
+          margin: -1px auto -1px auto;
+          position: absolute;
+          left: 25%;
+        }
+
+        .vtl-range-value {
+          font-size: 0.7rem;
+          font-weight: 400;
+        }
+
+        .vtl-range-label {
+          display: flex;
+          justify-content: space-around;
+          font-size: 0.7rem;
+          font-weight: 200;
+        }
+      </style>
+      <article class="vtl-card">
+        <div class="vtl-name"><slot name="vtl-name">Undefined</slot></div>
+        <div class="vtl-range">
+          <div class="vtl-range-value"></div>
+          <div class="vtl-range-bar">
+            <div class="vtl-range-bar-value"></div>
+            <div class="vtl-range-bar-normal"></div>
+          </div>
+          <div class="vtl-range-label">
+            <div class="vtl-range-min-value"></div>
+            <div class="vtl-range-max-value"></div>
+          </div>
+        </div>
+      </article>
+    </template>
+    <header>
+      <nav class="nav-main">
+        <div class="logo">VTL</div>
+        <div class="menu">
+          <button class="settings-btn" title="Settings">
+            <span class="sr-only">Settings</span>
+            <svg width="35px" height="35px" viewBox="0 0 35 35" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="17.5" cy="5.83" r="2.5" />
+              <circle cx="17.5" cy="17.5" r="2.5" />
+              <circle cx="17.5" cy="29.16" r="2.5" />
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="col">
+        <vtl-card-list></vtl-card-list>
+      </section>
+    </main>
+  </body>
+</html>

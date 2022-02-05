@@ -1,0 +1,16 @@
+[build]
+  base = "."
+  command = "jekyll build"
+  publish = "_site"
+[dev]
+  publish="_site"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Content-Security-Policy = "default-src 'none'; object-src 'none'; img-src 'self'; script-src 'self' 'sha256-6bcT0f0gWe8WBpmDwYaFWrJ/CcTtLfWm/uOy2psCVOQ=' 'sha256-bnNT1Ix/y47I7sD0F6wg6E9pIUqtz7JDpi6QHZmOL7k='; style-src 'self'; font-src 'self';manifest-src 'self'"
+    Referrer-Policy = "no-referrer"
+    Server = ""
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"

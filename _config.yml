@@ -1,0 +1,26 @@
+url: "https://charma.dev" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "" # the subpath of your site, e.g. /blog
+title: "charma.dev" # the name of your site, e.g. ACME Corp.
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      category: "notes"
+      include_highlights: true
+  - scope:
+      path: "assets/img"
+    values:
+      image: true
+sass:
+  style: compressed
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true
+      

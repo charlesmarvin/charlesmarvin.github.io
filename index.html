@@ -1,60 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
+---
+layout: default
+theme: 'landing'
+title: 'Home'
+---
 
-<head>
-  <meta charset="utf-8" />
-  <title>charlesmarvin.github.io</title>
-  <style type="text/css">
-    html,
-    body,
-    h1 {
-      margin: 0;
-      padding: 0;
-    }
-    
-    html {
-      width: 100%;
-      background-color: #000000;
-      overflow: hidden;
-    }
-    
-    body {
-      width: 100%;
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    }
-    
-    h1 {
-      font-size: 49vmax;
-      font-weight: bolder;
-      line-height: .75;
-      color: #FFFFFF;
-    }
-    
-    .contact-cta {
-      position: absolute;
-      top: 0;
-      right: 0;
-      background: #000000;
-      padding: .5em 1em;
-      letter-spacing: .05em;
-    }
-    
-    .contact-cta a {
-      text-decoration: none;
-      color: #FFFFFF;
-    }
-    .contact-cta a:hover {
-      text-decoration: underline;
-    }
-
-  </style>
-</head>
-
-<body>
-  <div class="contact-cta">
-    <a href="/notes" title="notes">notes</a>
+<section>
+  <div class="hero-text">
+    <h1>Hi! I'm Marvin. <span class="typed-text"></span></h1>
   </div>
-  <h1 title="2460 - Consulting">24<br>60</h1>
-</body>
-
-</html>
+</section>
+<script>
+  ;(function ({
+    sentences,
+    selector = '.typed-text',
+    backspaceDelay = 50,
+    typingDelay = 100,
+    wordDelay = 300,
+    endDelay = 3000,
+  }) {
+    var typedText = document.querySelector(selector)
+    if (!typedText) {
+      console.error("No element found matching query selector '" + selector + "'")
+      return
+    }
+    if (!(Array.isArray(sentences) && sentences.length)) {
+      console.error('{ sentences } param must be a non empty array.')
+      return
+    }
+    var sentenceIdx = 0
+    function setupBackspace() {
+      var backspaceInterval = setInterval(() => {
+        if (typedText.innerHTML) {
+          typedText.innerHTML = typedText.innerHTML.slice(0, -1)
+          return
+        }
+        clearInterval(backspaceInterval)
+        setupTyping()
+      }, backspaceDelay)
+    }
+    function setupTyping() {
+      var sentence = sentences[sentenceIdx]
+      // convert sentence into char array so we can shift off chars
+      var chars = sentence.split('')
+      // long pause after last word for dramatic effect
+      var delay = sentenceIdx === sentences.length - 1 ? endDelay : wordDelay
+      // wrap sentenceIdx when we've processed the last sentence
+      sentenceIdx = (sentenceIdx + 1) % sentences.length
+      var typeInterval = setInterval(() => {
+        if (chars.length) {
+          typedText.innerHTML = typedText.innerHTML + chars.shift()
+        } else {
+          clearInterval(typeInterval)
+          setTimeout(() => {
+            setupBackspace()
+          }, delay)
+        }
+      }, typingDelay)
+    }
+    setupTyping()
+  })({
+    sentences: ['Wanderer.', 'Developer.', 'Engineer.', 'Handyman.', 'Cook.', 'Runner.', 'Leader.', 'Human.'],
+  })
+</script>

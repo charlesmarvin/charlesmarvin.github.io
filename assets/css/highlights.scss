@@ -1,0 +1,28 @@
+---
+---
+
+@import 'pygments/emacs.css';
+
+pre,
+code {
+  font-family: monospace;
+  line-height: 1.4;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  overflow: auto;
+  -webkit-text-size-adjust: 100%; // this is needed so that ios does not randomly change the font size
+}
+
+pre {
+  
+  background-color: #f9f9f9;
+
+  .lineno {
+    border-right: 1px solid #ddd;
+    padding: 0 3px;
+    text-align: right;
+    opacity: 0.5;
+  }
+}

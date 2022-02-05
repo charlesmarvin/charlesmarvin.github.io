@@ -1,0 +1,41 @@
+<header class="mast-head">
+  <div>
+    <button
+      class="hamburger hamburger--arrow-l"
+      type="button"
+      aria-label="Menu"
+      aria-controls="navigation"
+    >
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button>
+  </div>
+  <div class="mast-head__logo">
+    <a href="/" class="mast-head__logo-link">charma.dev</a>
+  </div>
+</header>
+<nav id="navigation" class="navigation hide">
+  <ul>
+    <li><a href="/notes/">Notes</a></li>
+    <li><a href="/bookshelf">Bookshelf</a></li>
+    <li><a href="/work">Work</a></li>
+    <li><a href="/play">Play</a></li>
+  </ul>
+</nav>
+
+<script>
+  ;(function() {
+    var navToggle = document.querySelector('.hamburger')
+    var navigation = document.getElementById('navigation')
+    navToggle.addEventListener('click', (ele) => {
+      if (navToggle.classList.contains('is-active')) {
+        navToggle.classList.remove('is-active')
+        navigation.classList.add('hide')
+      } else {
+        navToggle.classList.add('is-active')
+        navigation.classList.remove('hide')
+      }
+    })
+  })()
+</script>

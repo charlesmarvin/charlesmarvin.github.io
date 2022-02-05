@@ -1,0 +1,27 @@
+.mast-head {
+  padding: $p1 $p2;
+  display: flex;
+  justify-content: space-between;
+  z-index: 100;
+  position: relative;
+  line-height: 2em;
+  align-items: baseline;
+
+  &__logo {
+    img {
+      height: 2em;
+    }
+  }
+  &__logo-link {
+    background-image: url($logoUrl);
+    background-repeat: no-repeat;
+    background-size: 100px;
+    background-position-y: bottom;
+    border: none;
+    display: block;
+    text-decoration: none;
+    text-indent: -9999px;
+    width: 100px;
+    margin-right: 1em;
+  }
+}

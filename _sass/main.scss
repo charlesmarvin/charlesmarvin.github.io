@@ -1,0 +1,173 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+  font-family: inherit;
+}
+
+html {
+  background: $backgroundColor;
+  color: $foregroundColor;
+  font-size: 62.5%; /* bring font size down to 10px for better calculation assuming 1em = 16px (browser default font-size) */
+  font-family: $bodyFont;
+}
+section {
+  padding: $p1;
+}
+main {
+  font-size: 1.3em;
+  line-height: 1.5em;
+  padding-left: $p2;
+  padding-right: $p2;
+  max-width: $maxContentWidth;
+  margin: 0 auto;
+}
+.landing {
+  main {
+    max-width: none;
+  }
+}
+a {
+  color: $foregroundColor;
+  border-bottom: 2px solid $linkHighlightColor;
+  text-decoration: none;
+  &:hover {
+    transition: all 0.3s ease-in-out 0s;
+    color: $linkHighlightColor;
+  }
+  &.img-link {
+    text-decoration: none;
+    border: none;
+  }
+}
+
+nav a {
+  position: relative;
+  text-decoration: none;
+  border: none;
+  transition: all 0.3s ease-in-out 0s;
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: $linkHighlightColor;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out 0s;
+  }
+  &:hover::before {
+    visibility: visible;
+    transform: scaleX(1);
+  }
+  &:visited {
+    color: $foregroundColor;
+  }
+  &:hover,
+  &:active {
+    color: $linkHighlightColor;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  line-height: 1em;
+}
+h1 {
+  font-size: 6vw;
+  margin-bottom: 20px;
+}
+h2 {
+  font-size: 3.5vw;
+}
+h3 {
+  font-size: 1.75em;
+}
+ul {
+  list-style-position: inside;
+  list-style-type: disc;
+}
+nav ul,
+.unstyled-list {
+  list-style: none;
+  li {
+    margin-bottom: 0.5em;
+  }
+}
+.hide {
+  display: none;
+}
+.mb-1 {
+  margin-bottom: 1em;
+}
+.mb-2 {
+  margin-bottom: 2em;
+}
+.flex {
+  display: flex;
+  .col {
+    flex: 1;
+  }
+}
+@media (max-width: 400px) {
+  .flex {
+    display: block;
+  }
+}
+
+.hero-text {
+  margin-top: 30vh;
+  span {
+    text-decoration: underline;
+    text-decoration-color: yellow;
+  }
+}
+.post-listing {
+  &__item {
+    margin-bottom: 0.3em;
+  }
+  // &__title {
+  //   font-size: 3vw;
+  // }
+  &__date {
+    display: inline-block;
+    font-size: 80%;
+  }
+}
+.post {
+  &__meta {
+    font-size: 80%;
+  }
+  &__content {
+    margin-top: 1em;
+    p {
+      margin-bottom: 1em;
+    }
+  }
+  &__tags {
+    margin-top: 1em;
+  }
+  &__tag-item {
+    display: inline-block;
+    background-color: #efefef;
+    padding: 1px 4px;
+    font-size: 80%;
+  }
+  &__cta {
+    margin-top: 2em;
+    margin-bottom: 4em;
+  }
+  img {
+    max-width: 80%;
+    height: auto;
+    margin: auto;
+    display: block;
+  }
+}

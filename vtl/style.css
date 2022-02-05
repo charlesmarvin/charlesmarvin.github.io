@@ -1,0 +1,80 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen-Sans, Ubuntu, Cantarell,
+    "Helvetica Neue", sans-serif;
+  font-size: 16px;
+}
+
+header {
+  height: 2em;
+}
+
+header nav {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  line-height: 1rem;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1rem;
+  height: calc(100% - 2em);
+  overflow: auto;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.logo {
+  font-weight: 900;
+  font-family: Futura, Trebuchet MS, Arial, sans-serif;
+}
+
+.settings-btn {
+  height: 24px;
+  width: 24px;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.settings-btn:focus {
+  outline: 1px dashed #C9C9C9;
+}
+
+.settings-btn:hover svg {
+  transform: scale(1.1);
+}
+
+.settings-btn svg {
+  outline: none;
+  transition: transform .3s linear;
+  height: inherit;
+  width: inherit;
+}
+
+.sr-only {
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  position: absolute;
+}

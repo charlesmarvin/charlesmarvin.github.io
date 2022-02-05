@@ -1,25 +1,25 @@
-<!DOCTYPE HTML>
-<html lang="en">
-  <head> 
-    <meta charset="utf-8">
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en-US' }}">
+  <head>
+    {% include meta.html %}
 
-    <title>notes / {{ page.title }}</title>
-    <meta name="description" content="A Github hosted weblog by Marvin Charles">
-    <meta name="author" content="Marvin Charles">
-    <meta name="viewport" content="width=device-width" />                          
-	<link rel="stylesheet" href="/css/default.css"> 
-	<link rel="stylesheet" href="/css/highlight.css">            
+    {% if page.theme == 'landing' %}
+      <link rel="stylesheet" href="{{ '/assets/css/landing.css' | relative_url }}">
+      <title>{{ site.title }}</title>
+    {% else %}
+      <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+      <title>{{ page.title }} - {{ site.title }}</title>
+    {% endif %}
+    
+    {% if page.include_highlights %}
+      <link rel="stylesheet" href="{{ '/assets/css/highlights.css' | relative_url }}">
+    {% endif %}
   </head>
-  <body>
-	<header>
-	  <nav>
-	    <ul>
-		  <li><h1><a href="/notes">charlesmarvin.github.io/notes</a></h1></li>
-		</ul>
-	  </nav>
-	</header>   
-	<div class="page-content">
-	{{ content }}
-	</div> 
+  <body class="{{ page.theme | default: 'default' }}">
+    {% include header.html  %}
+    <main>
+      {{ content}}
+    </main>
   </body>
 </html>
+
