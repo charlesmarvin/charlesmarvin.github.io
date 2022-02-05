@@ -13,14 +13,14 @@ body {
 }
 
 header {
-  height: 2em;
+  background-color: white;
 }
 
 header nav {
   padding: 1rem;
   display: flex;
   justify-content: space-between;
-  line-height: 1rem;
+  align-items: center;
 }
 
 main {
@@ -28,7 +28,6 @@ main {
   display: flex;
   flex-direction: column;
   padding: 2rem 1rem;
-  height: calc(100% - 2em);
   overflow: auto;
 }
 
