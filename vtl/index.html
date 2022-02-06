@@ -42,16 +42,6 @@
           z-index: 1;
         }
 
-        /* .vtl-range-bar-normal {
-          background-color: green;
-          border-radius: 3px;
-          width: 50%;
-          height: 7px;
-          margin: -1px auto -1px auto;
-          position: absolute;
-          left: 25%;
-        } */
-
         .vtl-range-value {
           font-size: 0.7rem;
           font-weight: 400;
@@ -65,12 +55,11 @@
         }
       </style>
       <article class="vtl-card">
-        <div class="vtl-name"><slot name="vtl-name">Undefined</slot></div>
+        <div class="vtl-name"></div>
         <div class="vtl-range">
           <div class="vtl-range-value"></div>
           <div class="vtl-range-bar">
             <div class="vtl-range-bar-value"></div>
-            <div class="vtl-range-bar-normal"></div>
           </div>
           <div class="vtl-range-label">
             <div class="vtl-range-min-value"></div>

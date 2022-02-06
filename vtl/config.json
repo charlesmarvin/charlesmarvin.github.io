@@ -37,7 +37,7 @@
     {
       "type": "RANGE",
       "shortName": "RBC",
-      "longName": "Red Blood Cells",
+      "longName": "Red Blood Cells (RBC)",
       "description": "Cells responsible for carrying oxygen throughout the body.",
       "panelType": "CBC",
       "normalRange": {
@@ -55,7 +55,7 @@
     {
       "type": "RANGE",
       "shortName": "WBC",
-      "longName": "White Blood Cells",
+      "longName": "White Blood Cells (WBC)",
       "description": "Immune system cells in the blood.",
       "panelType": "CBC",
       "normalRange": {
@@ -127,7 +127,7 @@
     {
       "type": "RANGE",
       "shortName": "ALP",
-      "longName": "Alkaline Phosphatase",
+      "longName": "Alkaline Phosphatase (ALP)",
       "description": "An enzyme mostly found in the bones and liver that's involved in several bodily processes.",
       "panelType": "CMP",
       "normalRange": {
@@ -145,7 +145,7 @@
     {
       "type": "RANGE",
       "shortName": "ALT",
-      "longName": "Alanine Aminotransferase",
+      "longName": "Alanine Aminotransferase (ALT)",
       "description": "An enzyme found in the liver.",
       "panelType": "CMP",
       "normalRange": {
@@ -163,7 +163,7 @@
     {
       "type": "RANGE",
       "shortName": "AST",
-      "longName": "Aspartate Aminotransferase",
+      "longName": "Aspartate Aminotransferase (AST)",
       "description": "An enzyme found in the liver and other tissues within the body.",
       "panelType": "CMP",
       "normalRange": {
@@ -199,7 +199,7 @@
     {
       "type": "RANGE",
       "shortName": "HDL",
-      "longName": "High-density Lipoprotein",
+      "longName": "High-density Lipoprotein (HDL)",
       "description": "\"good\" cholesterol.",
       "panelType": "lipid",
       "normalRange": {
@@ -217,7 +217,7 @@
     {
       "type": "RANGE",
       "shortName": "LDL",
-      "longName": "Low-density Lipoprotein",
+      "longName": "Low-density Lipoprotein (LDL)",
       "description": "\"bad\" cholesterol.",
       "panelType": "lipid",
       "normalRange": {

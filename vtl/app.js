@@ -13,14 +13,19 @@ class VtlCard extends HTMLElement {
   }
 
   connectedCallback() {
+    const shortName = this.getAttribute('data-short-name')
+    const longName = this.getAttribute('data-long-name')
     const value = this.getAttribute('data-value')
     const rangeMin = this.getAttribute('data-range-min')
     const rangeMax = this.getAttribute('data-range-max')
     const unit = this.getAttribute('data-unit')
+    this.setAttribute('title', longName)
 
     const rangePercent = ((value - rangeMin) / (rangeMax - rangeMin)) * 100
-
     console.log(value, rangeMin, rangeMax, unit, rangePercent)
+
+    const name = this.shadowRoot.querySelector('.vtl-name')
+    name.textContent = shortName
     const rangeValue = this.shadowRoot.querySelector('.vtl-range-value')
     rangeValue.textContent = value
     rangeValue.style.textIndent = `${23 + rangePercent}%`
@@ -36,9 +41,6 @@ class VtlCardList extends HTMLElement {
   constructor() {
     super()
     this.attachShadow({ mode: 'open' })
-
-    // const template = document.getElementById('vtl-card-tpl').content
-    // this.attachShadow({ mode: 'closed' }).appendChild(template.cloneNode(true))
   }
 
   async connectedCallback() {
@@ -57,13 +59,11 @@ class VtlCardList extends HTMLElement {
         return
       }
       const card = document.createElement('vtl-card')
-      const slot = document.createElement('slot')
       const sex = 'male'
-      slot.slot = 'vtl-name'
-      slot.textContent = datum[1]
-      card.appendChild(slot)
+      card.setAttribute('data-short-name', cfg.shortName)
+      card.setAttribute('data-long-name', cfg.longName)
       card.setAttribute('data-value', parseFloat(datum[2]).toFixed(1))
-
+      card.setAttribute('data-unit', cfg.unit)
       card.setAttribute('data-range-min', cfg.normalRange[sex].min.toFixed(1))
       card.setAttribute('data-range-max', cfg.normalRange[sex].max.toFixed(1))
       list.appendChild(card)
