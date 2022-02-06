@@ -205,11 +205,11 @@
       "normalRange": {
         "male": {
           "min": 40,
-          "max": 60
+          "max": 100
         },
         "female": {
           "min": 50,
-          "max": 60
+          "max": 100
         }
       },
       "unit": "mg/dL"
@@ -228,6 +228,132 @@
         "female": {
           "min": 0,
           "max": 99
+        }
+      },
+      "unit": "mg/dL"
+    },
+    {
+      "type": "RANGE",
+      "shortName": "Vitamin B12",
+      "longName": "Vitamin B12",
+      "description": "",
+      "panelType": "",
+      "normalRange": {
+        "male": {
+          "min": 232,
+          "max": 1245
+        },
+        "female": {
+          "min": 232,
+          "max": 1245
+        }
+      },
+      "unit": "pg/mL"
+    },
+    {
+      "type": "RANGE",
+      "shortName": "Vitamin D",
+      "longName": "Vitamin D - 25 Hydroxy",
+      "description": "",
+      "panelType": "",
+      "normalRange": {
+        "male": {
+          "min": 30,
+          "max": 100
+        },
+        "female": {
+          "min": 30,
+          "max": 100
+        }
+      },
+      "unit": "ng/mL"
+    },
+    {
+      "type": "RANGE",
+      "shortName": "TSH",
+      "longName": "Thyroid Stimulating Hormone (TSH)",
+      "description": "",
+      "panelType": "",
+      "normalRange": {
+        "male": {
+          "min": 0.45,
+          "max": 4.5
+        },
+        "female": {
+          "min": 0.45,
+          "max": 4.5
+        }
+      },
+      "unit": "uIU/mL"
+    },
+    {
+      "type": "RANGE",
+      "shortName": "HbA1c",
+      "longName": "Hemoglobin A1c (HbA1c)",
+      "description": "",
+      "panelType": "",
+      "normalRange": {
+        "male": {
+          "min": 4.8,
+          "max": 5.6
+        },
+        "female": {
+          "min": 4.8,
+          "max": 5.6
+        }
+      },
+      "unit": "%"
+    },
+    {
+      "type": "RANGE",
+      "shortName": "VLDL",
+      "longName": "Very Low Density Lipoprotein Cholesterol (VLDL)",
+      "description": "",
+      "panelType": "",
+      "normalRange": {
+        "male": {
+          "min": 5,
+          "max": 40
+        },
+        "female": {
+          "min": 5,
+          "max": 40
+        }
+      },
+      "unit": "mg/dL"
+    },
+    {
+      "type": "RANGE",
+      "shortName": "Triglycerides",
+      "longName": "Triglycerides",
+      "description": "",
+      "panelType": "",
+      "normalRange": {
+        "male": {
+          "min": 0,
+          "max": 149
+        },
+        "female": {
+          "min": 0,
+          "max": 149
+        }
+      },
+      "unit": "mg/dL"
+    },
+    {
+      "type": "RANGE",
+      "shortName": "Total Cholesterol",
+      "longName": "Total Cholesterol",
+      "description": "",
+      "panelType": "",
+      "normalRange": {
+        "male": {
+          "min": 100,
+          "max": 199
+        },
+        "female": {
+          "min": 100,
+          "max": 199
         }
       },
       "unit": "mg/dL"

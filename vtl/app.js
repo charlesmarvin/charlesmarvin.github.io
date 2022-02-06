@@ -28,9 +28,9 @@ class VtlCard extends HTMLElement {
     name.textContent = shortName
     const rangeValue = this.shadowRoot.querySelector('.vtl-range-value')
     rangeValue.textContent = value
-    rangeValue.style.textIndent = `${23 + rangePercent}%`
+    rangeValue.style.textIndent = `calc(25% + ${rangePercent / 2}% - 1em)`
     const rangeBarValue = this.shadowRoot.querySelector('.vtl-range-bar-value')
-    rangeBarValue.style.left = `${25 + rangePercent}%`
+    rangeBarValue.style.left = `calc(25% + ${rangePercent / 2}% - 2.5px)`
     this.shadowRoot.querySelector('.vtl-range-min-value').textContent = rangeMin
     this.shadowRoot.querySelector('.vtl-range-max-value').textContent = rangeMax
   }
