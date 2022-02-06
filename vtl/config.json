@@ -72,7 +72,7 @@
     },
     {
       "type": "RANGE",
-      "shortName": "platelets",
+      "shortName": "Platelets",
       "longName": "Platelets",
       "description": "The substances that control the clotting of the blood.",
       "panelType": "CBC",
@@ -90,7 +90,7 @@
     },
     {
       "type": "RANGE",
-      "shortName": "hemoglobin",
+      "shortName": "Hemoglobin",
       "longName": "Hemoglobin",
       "description": "Protein within the red blood cells that carries oxygen to organs and tissues, and carbon dioxide back to the lungs.",
       "panelType": "CBC",
@@ -108,7 +108,7 @@
     },
     {
       "type": "RANGE",
-      "shortName": "hematocrit",
+      "shortName": "Hematocrit",
       "longName": "Hematocrit",
       "description": "Percentage of blood made of red blood cells.",
       "panelType": "CBC",
@@ -180,7 +180,7 @@
     },
     {
       "type": "RANGE",
-      "shortName": "bilirubin",
+      "shortName": "Bilirubin",
       "longName": "Bilirubin",
       "description": "Waste resulting from the breakdown of red blood cells that the liver filters out.",
       "panelType": "CMP",
